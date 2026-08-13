@@ -4,7 +4,6 @@ export function recommend(bars, connoisseurs, reviews, options = {}) {
   const requireQuiet = options.requireQuiet ?? true;
 
   const trustById = new Map(connoisseurs.map((c) => [c.id, c.trust]));
-  const barById = new Map(bars.map((b) => [b.id, b]));
 
   const eligibleBars = bars.filter(
     (b) => !requireQuiet || b.quiet === true
